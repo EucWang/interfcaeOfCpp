@@ -14,7 +14,7 @@ int main(void) {
 	std::cout << "length is " << a->getLength() << ", str is : " << a->getString() << endl;
 
 	std::cout << "----------------------------------" << std::endl;
-	Atom* b = new Atom(12312);
+	Atom* b = new Atom(112);
 	std::cout << "length is " << b->getLength() << ", str is : " << b->getString() << endl;
 
 	//const char* a = Atom_new("12314", 5);

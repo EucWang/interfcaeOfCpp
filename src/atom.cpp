@@ -166,25 +166,26 @@ Atom::Atom(long n) {
 
 	if (n == LONG_MIN) { 
 		m = LONG_MAX + 1UL;  
-	}
-	else if (n < 0) {   
+	} else if (n < 0) {   
 		m = -n;   
-	}	
-	else {
+	} else {
 		m = n;    
 	}
+	
 	std::cout << "the m is " << m << endl;
 	 
 	do {
 		*s = m % 10 + '0';
-		s--;
 		std::cout << *s << "\t";
+		s--;
 	} while ((m /= 10) > 0);
 	std::cout << endl;
 
 	if (n < 0) { 
-		*--s = '-';
+		*s = '-';
+		s--;
 	}
+	s++;
 
 	this->length = (str + sizeof(str) - s);
 	this->str = (char*)malloc(sizeof(char) * (this->length + 1));
